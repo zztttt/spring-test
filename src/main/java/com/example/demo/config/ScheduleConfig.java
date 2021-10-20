@@ -8,6 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 @Configuration
 @EnableScheduling
@@ -16,7 +17,12 @@ public class ScheduleConfig {
     @Autowired
     private PostService postService;
 
-    @Scheduled(cron = "0 0 0-2 * * ? ")
+    @Scheduled(cron = "0 0/5 0-2 * * ? ")
+    public void test(){
+        log.info("schedule at: {}", new Date());
+    }
+
+    //@Scheduled(cron = "0 0/5 0-2 * * ? ")
     public void scheduleTask(){
         try{
             ArrayList<String> locations = new ArrayList<>();
