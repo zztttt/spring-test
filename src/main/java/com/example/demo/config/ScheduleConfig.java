@@ -17,12 +17,12 @@ public class ScheduleConfig {
     @Autowired
     private PostService postService;
 
-    @Scheduled(cron = "0 0/5 0-2 * * ? ")
+    //@Scheduled(cron = "0 0/5 0-2 * * ? ")
     public void test(){
         log.info("schedule at: {}", new Date());
     }
 
-    @Scheduled(cron = "0 0 0-6 * * ?")
+    @Scheduled(cron = "0 0 0-12 * * ?")
     public void scheduleTask(){
         try{
             ArrayList<String> locations = new ArrayList<>();
