@@ -17,7 +17,7 @@ public class ScheduleConfig {
     @Autowired
     private PostService postService;
 
-    @Scheduled(cron = "0 0 0-12 * * ?")
+    //@Scheduled(cron = "0 0 0-12 * * ?")
     public void test(){
         log.info("cron: {}, schedule at: {}", "0 0 0-12 * * ?", new Date());
     }
@@ -27,7 +27,7 @@ public class ScheduleConfig {
         log.info("cron: {}, schedule at: {}", "0 0 12 * * ?", new Date());
     }
 
-    //@Scheduled(cron = "0 0 0-12 * * ?")
+    @Scheduled(cron = "0 0 12 * * ?")
     public void scheduleTask(){
         try{
             ArrayList<String> locations = new ArrayList<>();
